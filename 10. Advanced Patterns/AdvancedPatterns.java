@@ -16,15 +16,15 @@ public class AdvancedPatterns {
         }
 
         // ===================== INVERTED & ROTATED HALF PYRAMID =====================
-        // for (int i = 1; i <= n; i++) {              // loop rows
-        //     for (int j = 1; j <= n - i; j++) {      // print leading spaces
-        //         System.out.print("  ");
-        //     }
-        //     for (int j = 1; j <= i; j++) {          // print stars (increases each row)
-        //         System.out.print("* ");
-        //     }
-        //     System.out.println();
-        // }
+        for (int i = 1; i <= n; i++) {              // loop rows
+            for (int j = 1; j <= n - i; j++) {      // print leading spaces
+                System.out.print("  ");
+            }
+            for (int j = 1; j <= i; j++) {          // print stars (increases each row)
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
 
         // ===================== INVERTED HALF PYRAMID WITH NUMBERS =====================
         // for (int i = n; i >= 1; i--) {          // start from n, go down to 1
