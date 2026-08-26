@@ -60,17 +60,33 @@ public class SortingAlgorithms {
     // COUNTING SORT
     // ===========================
     static void countingSort(int[] arr) {
-        int max = 0;
-        for (int x : arr) if (x > max) max = x;
+    int max = 0;
 
-        int[] count = new int[max + 1];
-        for (int x : arr) count[x]++;
-
-        int idx = 0;
-        for (int i = 0; i <= max; i++) {
-            while (count[i]-- > 0) arr[idx++] = i;
+    // Find maximum value
+    for (int num : arr) {
+        if (num > max) {
+            max = num;
         }
     }
+
+    // Count occurrences
+    int[] count = new int[max + 1];
+
+    for (int num : arr) {
+        count[num]++;
+    }
+
+    // Rebuild sorted array
+    int index = 0;
+
+    for (int i = 0; i <= max; i++) {
+        while (count[i] > 0) {
+            arr[index] = i;
+            index++;
+            count[i]--;
+        }
+    }
+}
 
     public static void main(String[] args) {
 
